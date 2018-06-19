@@ -1,0 +1,51 @@
+
+#searchPage{
+	.hotSearch{
+		font-size:0.36rem;
+		.hot_title{
+			margin-top:0.24rem;
+			height:0.48rem;
+			line-height:0.48rem;
+			padding-left:0.42rem;
+			font-size:0.33rem;
+			color:#797979;
+		}
+		.near_title{
+			margin-top:0.24rem;
+			height:0.48rem;
+			line-height:0.48rem;
+			padding-left:0.42rem;
+			font-size:0.33rem;
+			color:#797979;
+		}
+		.hotSearchList{
+			padding:0 1.066667rem 0 0.17rem;
+			box-szing:border-box;
+			overflow:hidden;
+			width:100%;
+			li{
+				padding:0.106667rem 0.26rem;
+				border:1px solid #DBDBDB;
+				border-radius:0.26rem;
+				margin:0.213333rem 0.16rem 0;
+				float:left;
+			}
+		}
+		.nearSearchList{
+			width:100%;
+			padding:0 0.32rem;
+			li{
+				height:1.173333rem;
+				line-height:1.173333rem;
+				border-bottom:1px solid #DADADA;
+				.history_icon{
+					display:inline-block;
+					vertical-align:middle;
+					font-size:0.5rem;
+					margin:0 0.4rem 0.066667rem 0.066667rem;
+					
+				}
+			}
+		}
+	}
+}

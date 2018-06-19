@@ -1,0 +1,25 @@
+<p>
+  productdataform works!
+</p>
+<div *ngFor="let col of colsConfig">
+
+</div>
+<!--<div>
+	<div *ngFor="let col of colsConfig" >
+		<label>{{privateDic[common.lanType] && privateDic[common.lanType][col]? privateDic[common.lanType][col] : common.publicDic[common.lanType][col] || col}}</label>
+		<div *ngIf="colsAttributes[col]" [ngSwitch]="colsAttributes[col].type">
+			<select *ngSwitchCase="'select'">
+				<option [value]="obj.value" [selected]="obj.value == colsAttributes[col]['defaultValue']" *ngFor="let obj of colsAttributes[col].data">{{obj.text}}</option>
+			</select>
+			<select *ngSwitchCase="'select-api'">
+				<ng-template ngFor let-obj [ngForOf]="selecApiDataSet[col]">
+					<option [value]="obj[colsAttributes[col].match.value]" *ngIf="obj[colsAttributes[col].match.value] == colsAttributes[col]['defaultValue']" selected>{{obj[colsAttributes[col].match.text]}}</option>
+					<option [value]="obj[colsAttributes[col].match.value]" *ngIf="obj[colsAttributes[col].match.value] != colsAttributes[col]['defaultValue']"s>{{obj[colsAttributes[col].match.text]}}</option>s
+				</ng-template>
+			</select>
+		</div>
+		<div *ngIf="!colsAttributes[col]">
+			<input type="text" />
+		</div>
+	</div>
+</div>-->

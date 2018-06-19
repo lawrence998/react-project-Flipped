@@ -1,0 +1,3 @@
+export const SUB_REQUESTING = 'SUB_REQUESTING';
+export const SUB_REQUESTED = 'SUB_REQUESTED';
+export const SUB_ERROR = 'SUB_ERROR';

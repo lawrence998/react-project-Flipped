@@ -1,0 +1,3 @@
+export const DEL_REQUESTING = 'DEL_REQUESTING';
+export const DEL_REQUESTED = 'DEL_REQUESTED';
+export const DEL_ERROR = 'DEL_ERROR';

@@ -1,0 +1,222 @@
+.product-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    .prolist-top{
+        display: flex;
+        flex-direction:row;
+        justify-content:center;
+        width: 100%;
+        height: 1.333333rem;
+        background: #000;
+        color: #fff;
+        i {
+            display: inline-block;
+            flex: 1;
+            height: 100%;
+            line-height: 1.333333rem;
+            font-size: 0.6rem;
+            color: #fff;
+            text-align: center;
+        }
+        .title {
+            flex: 4;
+            color: #fff;
+            line-height: 1.333333rem;
+            font-size: 0.6rem;
+            text-align: center;
+        }
+    }
+    .prolist-nav {
+        position: relative;
+        width: 100%;
+        height: 1rem;
+        display: flex;
+        flex-direction:row;
+        justify-content:center;
+        border-bottom: 0.026666rem solid #ccc;
+        text-align: center;
+        font-size: 0.4rem;
+        line-height: 1rem;
+        color: #303030;
+        .prolist-nav-item{
+            
+            flex: 1;
+            i {
+                display: inline-block;
+                font-size: 0.4rem;
+            }
+            .prolist-nav-item2{
+                position: absolute;
+                left: 0;
+                top: 1rem;
+                z-index: 2;
+                overflow: auto;
+                background: #fff;
+                width: 10rem;
+                .prolist-nav-mini-item {
+                    position: relative;
+                    display: flex;
+                    justify-content:space-between;
+                    width: 100%;
+                    height: 1rem;
+                    padding: 0.133333rem;
+                    text-align: center;
+                    line-height: 0.733333rem;
+                    border-bottom: 0.013333rem solid #ccc;
+                    lable {
+                      position: absolute;
+                      z-index:-1;
+                    }
+                    input {
+                        display: none;
+                    }
+                    i {
+                        position: absolute;
+                        right:0.133333rem;
+                        display: inline-block;
+                        padding-top: 0.2rem;
+                        color: #fff;
+                    }
+                }
+                .active {
+                    color: #d8a33e;
+                    i {
+                        color: #d8a33e;
+                    }
+                }
+            }
+            .prolist-nav-item3 {
+                position: absolute;
+                right: -0.026666rem;
+                top: -1.333333rem;
+                width: 10.133333rem;
+                height: 18rem;
+                display: flex;
+                z-index: 5;
+                .prolist-nav-item3-right{
+                    height: 18rem;
+                    flex: 2;
+                    background: #F9F9F9;
+                    .prolist-nav-item3-top {
+                       display: flex;
+                       justify-content: space-between;
+                       height: 1.333333rem; 
+                       line-height: 1.333333rem; 
+                       font-weight: blod;
+                       border-bottom: 0.013333rem solid #ddd;   
+                       input {
+                           display: inline-block;
+                           width: 1.333333rem;
+                           height: 0.666666rem;
+                           background: #fff;
+                           font-size: 0.4rem;
+                           margin: 0.333333rem;
+                           margin-top: 0.4rem;
+                           background: #F9F9F9;
+                       }
+                    }
+                   .prolist-nav-item3-service {
+                       text-align: left;
+                       p {
+                           text-align: left;
+                           margin-left: 0.133333rem;
+                       }
+                       input {
+                           display: inline-block;
+                           width: 2.666666rem;
+                           height: 1.066666rem;
+                           background: #fff;
+                           margin: 0.2rem;
+                           padding: 0.106666rem;
+                           font-size: 0.373333rem;
+                       }
+                       input.living{
+                            background-color: #d8a33e;
+                        }
+                   }
+                   .prolist-nav-item3-price-section{
+                       text-align: left;
+                       p {
+                           text-align: left;
+                           margin-left: 0.133333rem;
+                       }
+                       input {
+                           display: inline-block;
+                           width: 2.666666rem;
+                           height: 1.066666rem;
+                           background: #fff;
+                           margin: 0.2rem;
+                           padding: 0.266666rem;
+                           font-size: 0.4rem; 
+                       }
+                       input.live{
+                            background-color: #d8a33e;
+                        }
+                   }
+                }
+                
+                .prolist-nav-item3-cover {
+                    flex: 1;
+                    background: rgba(200, 200, 200, 0.5);
+                }
+            }
+            
+        }
+    }
+    .prolist-cover {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 8rem;
+        z-index: 3;
+        background: rgba(200, 200, 200, 0.5);
+        .am-icon-lg {
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+    }
+    .prolist-container{
+        flex: 1;
+        width: 100%;
+        height: 15.466666rem;
+        display: flex;
+        overflow-x:hidden;
+        flex-wrap: wrap;
+        .prolist-proitem {
+            position: relative;
+            width: 4.4rem;
+            height: 6.4rem;
+            margin: 0.3rem;
+            font-size: 0.32rem;
+            img {
+                width: 4.346666rem;
+                height: 4.346666rem;
+            }
+            p {
+                text-align: center;
+            }
+            p.price {
+               position: absolute;
+               left: 0;
+               bottom: 2.08rem;
+               width: 2.133333rem;
+               text-align: left;
+               color: #fff;
+               background: linear-gradient(to right,rgba(0,0,0,.3),transparent); 
+            }
+            p.designer{
+                margin-top: 0.266666rem;
+            }
+            p.pro-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            p.like-qty{
+                margin-top: 0.266666rem;
+            }
+        }
+    }
+}

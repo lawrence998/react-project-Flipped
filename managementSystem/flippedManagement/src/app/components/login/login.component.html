@@ -1,0 +1,30 @@
+
+<div id="login">
+	<div class="input-group">
+		<p>Flipped后台管理系统</p>
+		<div class="login">
+		  <span class="loginInput">账号</span>
+		  <input type="text" class="username"  name="name"[(ngModel)]="name" (blur) = "testInput(template)"/>
+		</div>
+		<div class="loginPaw">
+		  <span class="registerInput">密码</span>
+		  <input type="password" class="paw" name="pword" [(ngModel)]="pword" (blur) = "testInput(template)"/>
+		</div>
+		<button type="button" class="btn btn-primary" (click) = "loginIn(template)">
+		 登录
+		</button>
+	</div>
+</div>
+
+ 
+<ng-template #template>
+	<!-- //登录弹窗 成功或者失败-->
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{loginState}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</ng-template>
+
+

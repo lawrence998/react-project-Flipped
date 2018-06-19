@@ -1,0 +1,78 @@
+
+.box{
+    flex-direction: column;
+   
+    display: flex;
+    .flex-item1{
+       width:10.0rem;
+       height:6.72rem;
+       position:relative;
+
+       .position{
+         color:#fff;
+          font-size:0.4rem;
+          position:absolute;
+          left:0.266667rem;
+          top:4.3rem;
+          letter-spacing:0.106667rem;
+
+          .designame{
+            font-size:0.533333rem;
+             font-weight:bold;
+          }
+          .founder{
+            font-size:0.333333rem;
+          }
+          .ministyle{
+            font-size:0.266667rem;
+            padding-top:0.133333rem;
+          }
+       }
+    }
+    .flex-item2{
+        height:1.0rem;
+        text-align:center;
+        .hy,.fg{
+            font-size:0.4rem;
+            line-height:1.0rem;
+            margin:0 0.613333rem;
+        }
+        .hy{color:orange;}
+    }
+
+    .flex-item3{
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+
+         .flex-item4{
+            width:4.96rem;
+            height:4.96rem;
+            margin-bottom:0.066667rem;
+         }
+        .flex-item4 img{
+            border-right:0.066667rem solid #fff;
+        }
+    }
+
+    .dsing2{
+        display:none;
+        .flex-item5{
+             display: flex;
+             flex-direction: row;
+             flex-wrap: wrap;
+            
+             .flex-item4{
+                width:4.96rem;
+                height:4.96rem;
+                margin-bottom:0.066667rem;
+             }
+             .flex-item4 img{
+            border-right:0.066667rem solid #fff;
+        }
+            
+        }
+    }
+
+
+}

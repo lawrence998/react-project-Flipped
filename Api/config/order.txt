@@ -1,0 +1,20 @@
+{
+    "multiple": false,
+    "cols": "*",
+    "pagination": {
+        "pageitems": 10
+    },
+    "filterData": {
+        "product_id": {
+            "type": "Replace",
+            "reg": "(\\d{2}).+(\\d{3})",
+            "replaceVal": "$1***$2"
+        }
+    },
+    "apiOpt": {
+        "orderList": "orderList",
+        "del_s": "delOrder",
+        "del_m": "delOrders",
+        "add": "addOrder"
+    }
+}

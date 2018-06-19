@@ -1,0 +1,62 @@
+{
+	"productFormCols":"product_title,price,postage,product_img,detail_img,descrition,brand,repertory,type,product_type,datatime,series,popurlar,return_goods,discount,delivery",
+	"productFormColsAttributes":{
+		"product_title": {
+			"type":"text"
+		},
+		"price": {
+			"type":"text"
+		},
+		"postage": {
+			"type":"text"
+		},
+		"product_img": {
+			"type":"file"
+		},
+		"descrition": {
+			"type":"textarea"
+		},
+		"brand": {
+			"type":"text"
+		},
+		"repertory": {
+			"type":"text"
+		},
+		"type":{
+			"type":"select",
+			"data":[{"value":0,"text":"女人"},{"value":1,"text":"男人"},{"value":2,"text":"生活家居"},{"value":3,"text":"箱包"},{"value":4,"text":"礼物"},{"value":5,"text":"配饰"},{"value":6,"text":"配件"},{"value":7,"text":"美食"}],
+			"defaultValue":"0"
+		},
+		"product_type": {
+			"type":"select-two",
+			"data":[{"value":0,"text":"毛衣"},{"value":1,"text":"长袖上衣"},{"value":2,"text":"风衣"},{"value":3,"text":"外套"},{"value":4,"text":"衬衫"},{"value":5,"text":"针织衫"},{"value":6,"text":"卫衣"},{"value":7,"text":"裤子"},{"value":8,"text":"上衣"},{"value":9,"text":"裙子"}],
+			"defaultValue":"0"
+		},
+		"theme": {
+			"type":"text"
+		},
+		"datatime": {
+			"type":"date"
+		},
+		"detail_img": {
+			"type":"file",
+			"name":"img",
+			"multiple":true
+		},
+		"series": {
+			"type":"text"
+		},
+		"popurlar": {
+			"type":"checkbox"
+		},
+		"return_goods": {
+			"type":"checkbox"
+		},
+		"discount": {
+			"type":"checkbox"
+		},
+		"delivery": {
+			"type":"checkbox"
+		}
+	}
+}

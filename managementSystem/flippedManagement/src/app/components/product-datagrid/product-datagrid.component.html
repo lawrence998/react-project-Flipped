@@ -1,0 +1,157 @@
+<div class="top-product">
+	<div class="product-add">
+	<button type="button" data-toggle="modal" data-target="#add-product" class="btn btn-primary">添加商品</button>
+	</div>
+	<div class="product-delete-some">
+		<button type="button" class="btn btn-danger" (click)="deleteSome()">批量删除商品</button>
+	</div>
+	<div class="pro-search">
+		<form class="bs-example bs-example-form" role="form">
+	        <div class="row">
+	            <div class="col-lg-6">
+	                <div class="input-group">
+	                    <input type="text" class="form-control search-key" placeholder="搜索商品名字，类型，品牌，介绍.....">
+	                    <span class="input-group-btn">
+	                        <button class="btn btn-default" type="button" (click)="searchProduct()">查询</button>
+	                    </span>
+	                </div><!-- /input-group -->
+	            </div><!-- /.col-lg-6 -->
+	        </div><!-- /.row -->
+	    </form>
+	</div>
+</div>
+
+<div class="product-datagrid" *ngIf="dataset">
+	<table  class="table table-bordered">
+		<thead>
+			<tr>
+				<th *ngIf="multiple"><input type="checkbox" [checked]="currentTrs.length === dataset.length" (click)="selectAll()"/></th>
+				<ng-template ngFor let-key let-idx="index" [ngForOf]="getKeys(dataset[0])" [ngForTrackBy]="trackByFn"> 
+					<!--publicDic[store.lanType][key] || key字典中没有的字段就设置为数据的默认字段-->
+					<th *ngIf="(!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0">{{privateDic[common.lanType] && privateDic[common.lanType][key]? privateDic[common.lanType][key] : common.publicDic[common.lanType][key] || key}}</th>
+				</ng-template>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let obj of dataset;trackBy:trackByFn" [class.actived] = "currentTrs && currentTrs.indexOf(obj[hideColumns])>-1"  [attr.proid]="obj[hideColumns]" (click)="selectTr(obj[hideColumns],$event)">
+				<td *ngIf="multiple"><input type="checkbox" [checked]="currentTrs && currentTrs.indexOf(obj[hideColumns])>-1"/></td>
+				<ng-template ngFor let-key [ngForOf]="getKeys(obj)">
+					<td *ngIf="((!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0) && (key != 'product_img')">{{filterData(key,obj[key])}}</td>
+					<td *ngIf="((!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0) && (key == 'product_img')">
+						<img [src]="obj['product_img']" [alt]="obj['product_title']" />
+					</td>
+				</ng-template>
+				<td>
+					<button class="btn btn-default btn-sm" value="修改" data-toggle="modal" data-target="#change-product" (click)="changeProduct($event)">修改</button>
+					<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#delete-product" value="删除" (click)="getId($event)">删除</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="product-pagination" *ngIf="paginationConfig">
+		<nav aria-label="Page navigation" class="clearfix">
+     <ul class="pagination pagination-sm pagination1 fr" style="margin: 0">
+       <li [class.disabled]="page==1">
+         <a href="javascript:void(0)" aria-label="Previous" (click)="sub(page-1<1?1:page-1)">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li *ngIf="page >= pageNum && lastPage !== pageNum" (click)="sub(1)" [class.active]="item==1">
+         <a href="javascript:void(0)">1</a>
+       </li>
+       <li *ngIf="page >= pageNum && lastPage !== pageNum">
+         <a href="javascript:void(0)">...</a>
+       </li>
+      <li (click)="sub(item)" [class.active]="item==page" *ngFor="let item of pages">
+         <a href="javascript:void(0)">{{item}}</a>
+       </li>
+       <li *ngIf="lastPage > pageNum && firstPage <= lastPage - pageNum">
+         <a href="javascript:void(0)">...</a>
+       </li>
+       <li *ngIf="lastPage > pageNum && firstPage <= lastPage - pageNum" (click)="sub(lastPage)" [class.active]="item==page">
+         <a href="javascript:void(0)">{{lastPage}}</a>
+       </li>
+       <li [class.disabled]="page==lastPage">
+         <a href="javascript:void(0)" aria-label="Next" (click)="sub(page+1>lastPage?page:page+1)">
+          <span aria-hidden="true">&raquo;</span>
+         </a>
+       </li>
+     </ul>
+     <span>共{{rowsCount}}件商品，{{pageCount}}页</span>
+  </nav>
+</div>
+<!--删除模态框-->
+<div class="modal fade" id="delete-product" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">确认信息</h4>
+            </div>
+            <div class="modal-body">确认要删除ID为'{{productID}}'的商品吗？</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteProduct(productID)">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--请求成功后提示-->
+<div class="product-msg" >
+	<div *ngIf="productStatus.status" class="alert alert-success">
+	    <a class="close" data-dismiss="alert">
+	        &times;
+	    </a>
+	    <strong>成功！</strong>已删除商品。
+	</div>
+	<div *ngIf="productStatus['status'] == false" class="alert alert-danger">
+	    <a class="close" data-dismiss="alert">
+	        &times;
+	    </a>
+	    <strong>失败！</strong>请稍后重试。
+	</div>
+	<!--<div *ngIf="productStatus['status']" class="alert alert-danger">
+	    <a class="close" data-dismiss="alert">
+	        &times;
+	    </a>
+	    <strong>换个词吧，亲。</strong>无相关数据。
+	</div>-->
+	<div *ngIf="currentTrsStatus" class="alert alert-danger">
+	    <a class="close" data-dismiss="alert">
+	        &times;
+	    </a>
+	    <span>请至少选中1条数据。</span>
+	</div>
+</div>
+<!--添加商品信息-->
+<div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<app-productchangeform [api]="'productForm.txt'" [handlePro]="'add'"></app-productchangeform>
+</div>
+<!--修改商品信息-->
+<div class="modal fade" id="change-product" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<app-productchangeform [api]="'productForm.txt'" [handlePro]="'change'" [productChange]="productChange"></app-productchangeform>
+<!--    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">修改商品信息</h4>
+            </div>
+            <div class="modal-body">
+            	<form role="form" *ngFor="let obj of productChange;let idx = index;trackBy:trackByFn">
+				  <div class="form-group" *ngFor="let key of getKeys(obj)">
+				    <label for="name">{{key}}</label>
+				    <input type="text" class="form-control" id="name" [value]="obj[key]"/>
+				  </div>
+				</form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+  

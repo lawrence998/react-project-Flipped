@@ -1,0 +1,62 @@
+#place{
+	>p{
+		width:100%;
+		height:1.6rem;
+		line-height:1.6rem;
+		font-size:0.5rem;
+		background:#000;
+		color:#fff;
+		text-align:center;
+		margin-bottom:0.666667rem;
+		position:relative;
+		.goMine{
+			position:absolute;
+			font-size:0.8rem;
+			left:0.533333rem;
+			top:50%;
+			transform:translateY(-50%);
+		}
+	}
+	.newPlace{
+		width:100%;
+		height:1.333333rem;
+		font-size:0.40rem;
+		div{
+			width:100%;
+			padding:0 0.8rem 0 0.5rem;
+			height:1.2rem;
+			input{
+				height:1.2rem;
+				width:75%;
+				padding-top:0.533333rem;
+				box-sizing:border-box;
+				background:none;
+				border-bottom:2px solid #ccc;
+				vertical-align:bottom;
+				margin-left:0.4rem;
+			}
+			span{
+				display:inline-block;
+				width:20%;
+				text-align:right;
+				vertical-align:bottom;
+				padding-top:0.066667rem;
+			}
+		}
+	}
+	.saveInPlace{
+		width:6.0rem;
+		height:1.2rem;
+		background:#000;
+		color:#fff;
+		text-align:center;
+		line-height:1.2rem;
+		font-size:0.48rem;
+		border-radius:0.1rem;
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+	}
+	
+}

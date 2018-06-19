@@ -1,0 +1,3 @@
+export const ADD_REQUESTING = 'ADD_REQUESTING';
+export const ADD_REQUESTED = 'ADD_REQUESTED';
+export const ADD_ERROR = 'ADD_ERROR';

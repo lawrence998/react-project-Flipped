@@ -1,0 +1,100 @@
+.c-nav-search {
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+.c-nav-search input {
+  background-color: #0acba2;
+  border: 1px solid #0acba2;
+  color: #eeeeee;
+  font-size: 15px;
+}
+.c-nav-search input:focus {
+  border: 1px solid #0cdfb2;
+}
+.c-nav-search input::-webkit-input-placeholder {
+  color: #eeeeee !important;
+}
+.c-nav-search input:-moz-placeholder {
+  color: #eeeeee !important;
+}
+.c-nav-search input::-moz-placeholder {
+  color: #eeeeee !important;
+}
+.c-nav-search input:-ms-input-placeholder {
+  color: #eeeeee !important;
+}
+.c-nav-search button {
+  color: #eeeeee;
+  background-color: #0acba2;
+  font-size: 15px;
+  border: 1px solid #0acba2;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.c-nav-search button:focus {
+  border: 1px solid #0cdfb2;
+}
+.c-nav-search button:active {
+  background-color: #09b892;
+}
+.c-nav {
+  margin-left: 0px;
+  height: -moz-calc(-165vh);
+  height: -webkit-calc(-165vh);
+  height: calc(-165vh);
+  padding-left: 8px;
+  padding-right: 5px;
+  font-size: 15px;
+}
+.c-nav .c-search-msg {
+  color: #eeeeee;
+  margin-left: 13px;
+}
+.c-nav .c-sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.c-nav .c-sidebar-menu a {
+  color: #eeeeee;
+  text-decoration: none;
+  border: 0px;
+}
+.c-nav .c-sidebar-menu > li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.c-nav .c-sidebar-menu > li:hover >a {
+  color: #eeeeee;
+  border: 0px;
+}
+.c-nav .c-sidebar-menu > li.active >a {
+  color: #eeeeee;
+  border: 0px;
+}
+.c-nav .c-sidebar-menu > li > a {
+  padding: 8px 5px 8px 15px;
+  display: block;
+  border-left: 3px solid transparent;
+  color: #eeeeee;
+  border: 0px;
+}
+.c-nav .c-sidebar-menu > li > a:hover {
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  cursor: pointer;
+  filter: alpha(opacity=35);
+  -moz-opacity: 0.35;
+  opacity: 0.35;
+  margin-left: 5px;
+}
+.c-nav .c-sidebar-menu > li > a > .fa {
+  width: 20px;
+}

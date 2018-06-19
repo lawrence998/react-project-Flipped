@@ -1,0 +1,143 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 *ngIf="handlePro == 'add'" class="modal-title" id="myModalLabel">添加商品信息</h4>
+            <h4 *ngIf="handlePro == 'change'" class="modal-title" id="myModalLabel">修改商品信息</h4>
+        </div>
+        <form  class="add-form" #proForm="ngForm" (ngSubmit)="onSubmit(proForm.value)">
+        	<div class="modal-body">
+        		<div class="product-msg" (click)="emptyForm()">
+					<div class="alert alert-success" data-dismiss="modal"  *ngIf="addproductStatus.status">
+					    <a class="close" data-dismiss="alert" >
+					        &times;
+					    </a>
+					    <span *ngIf="handlePro == 'add'"><strong >成功！</strong>已添加商品。</span>
+					    <span *ngIf="handlePro == 'change'"><strong >成功！</strong>已修改商品。</span>
+					</div>
+					<div *ngIf="addproductStatus['status'] == false" class="alert alert-danger">
+					    <a class="close" data-dismiss="alert">
+					        &times;
+					    </a>
+					    <strong>失败！</strong>请稍后重试。
+					</div>
+				</div>
+        			<div class="form-group">
+						    <label for="product_title">产品名称</label>
+						    <input *ngIf="handlePro == 'add'" ng-minlength="1" required type="text" class="form-control"  name="product_title" ngModel  #product_title="ngModel"/>
+						    <input *ngIf="handlePro == 'change'" [value]="productChange['product_title']" ng-minlength="1" required type="text" class="form-control"  name="product_title" ngModel  #product_title="ngModel"/>
+						  </div>
+						  <div class="form-group">
+						    <label for="price">价钱</label>
+						    <input *ngIf="handlePro == 'add'" ng-minlength="1" required type="text" class="form-control"  name="price" ngModel  #price="ngModel"/>
+						    <input *ngIf="handlePro == 'change'" [value]="productChange['price']" ng-minlength="1" required type="text" class="form-control"  name="price" ngModel  #price="ngModel"/>
+						  </div>
+						  <div class="form-group">
+						    <label for="postage">邮费</label>
+						    <input *ngIf="handlePro == 'add'" ng-minlength="1" required type="text" class="form-control" name="postage" ngModel  #postage="ngModel"/>
+						    <input *ngIf="handlePro == 'change'" [value]="productChange['postage']" ng-minlength="1" required type="text" class="form-control"  name="postage" ngModel  #postage="ngModel"/>
+						  </div>
+						  <div class="form-group">
+						    <label for="brand">品牌</label>
+						    <input *ngIf="handlePro == 'add'" ng-minlength="1" required type="text" class="form-control"  name="brand" ngModel  #brand="ngModel"/>
+						    <input *ngIf="handlePro == 'change'" [value]="productChange['brand']" ng-minlength="1" required type="text" class="form-control"  name="brand" ngModel  #brand="ngModel"/>
+						  </div>
+						  <div class="form-group">
+						    <label for="repertory">库存</label>
+						    <input *ngIf="handlePro == 'add'" ng-minlength="1" required type="text" class="form-control"  name="repertory" ngModel  #repertory="ngModel"/>
+						    <input *ngIf="handlePro == 'change'" [value]="productChange['repertory']" ng-minlength="1" required type="text" class="form-control"  name="repertory" ngModel  #repertory="ngModel"/>
+						  </div>
+						  <!--<div class="form-group">
+						    <label for="product_img">产品图片</label>
+						    <input type="file" class="proimg"  name="product_img" ngModel  #product_img="ngModel"/>
+						  </div>-->
+						  <div class="form-group">
+						    <label for="descrition">商品描述</label>
+						    <textarea *ngIf="handlePro == 'add'" required class="form-control"  name="descrition" ngModel  #descrition="ngModel"></textarea>
+						    <textarea *ngIf="handlePro == 'change'" [value]="productChange['descrition']" required class="form-control"  name="descrition" ngModel  #descrition="ngModel"></textarea>
+						  </div>
+						  <div class="checkbox">
+						    <label>
+						      <input [checked]="productChange != {} && productChange['discount'] == '3'" type="checkbox" name="discount" ngModel  #discount="ngModel"/>折扣
+						    </label>
+						  </div>
+						  <div class="checkbox">
+						    <label>
+						      <input [checked]="productChange != {} && productChange['return_goods'] == '2'" type="checkbox" name="return_goods" ngModel  #return_goods="ngModel"/>可退货
+						    </label>
+						  </div>
+						  <div class="checkbox">
+						    <label>
+						      <input [checked]="productChange != {} && productChange['popurlar'] == '1'" type="checkbox" name="popurlar" ngModel  #popurlar="ngModel"/>热门商品
+						    </label>
+						  </div>
+						  <div class="checkbox">
+						    <label>
+						      <input [checked]="productChange != {} && productChange['delivery'] == '4'" type="checkbox" name="delivery" ngModel  #delivery="ngModel"/>快速发货
+						    </label>
+						  </div>
+						   <div class="form-group">
+						    <label for="type">商品类型</label>
+						    <select ng-minlength="1" required class="form-control" name="type" ngModel  #type="ngModel">
+						      <option>女人</option>
+						      <option>男人</option>
+						      <option>生活家居</option>
+						      <option>箱包</option>
+						      <option>礼物</option>
+						      <option>配饰</option>
+						      <option>配件</option>
+						      <option>美食</option>
+						    </select>
+						  </div>
+					
+	        </div>
+	        <div class="modal-footer">
+	            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	            <button type="submit" class="btn btn-primary">确定</button>
+	        </div>
+        </form>
+    </div>
+</div>
+
+
+<!--<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">添加商品信息</h4>
+        </div>
+        <form role="form" (change)="getVal($event)">
+        <div class="modal-body">
+	        	<div *ngFor="let col of colsConfig" >
+							<label *ngIf="colsAttributes[col]['type'] != 'checkbox'">{{privateDic[common.lanType] && privateDic[common.lanType][col]? privateDic[common.lanType][col] : common.publicDic[common.lanType][col] || col}}</label>
+							<div *ngIf="colsAttributes[col]" [ngSwitch]="colsAttributes[col]['type']">
+								<select *ngSwitchCase="'select'" class="form-control" (change)="productType($event)">-->
+									<!--<option [value]="obj.value" [selected]="obj.value == colsAttributes[col]['defaultValue']" *ngFor="let obj of colsAttributes[col].data">{{obj.text}}</option>-->
+									<!--<ng-template ngFor let-obj let-idx="index" [ngForOf]="colsAttributes[col]['data']" [ngForTrackBy]="trackByFn"> 
+										<option *ngIf="col == 'type'" [value]="obj.text">{{obj.text}}</option>-->
+										<!--<option *ngIf="col == 'product_type'" [value]="obj.value">{{obj.text}}</option>-->
+<!--									</ng-template>
+								</select>
+								<select *ngSwitchCase="'select-two'" class="form-control">
+									<option *ngFor="let obj of proAttributes" [value]="obj.text || obj.product_type">{{obj.text || obj.product_type}}</option>
+								</select>
+								<input *ngSwitchCase="'text'" type="text" [attr.name]="col" [name]="col" ngModel #[col]="ngModel" class="form-control"/>
+								<input *ngSwitchCase="'file'" type="file" name="img" multiple/>
+								<input *ngSwitchCase="'date'" type="date"/>
+								<label *ngSwitchCase="'checkbox'" class="checkbox-inline">
+						        <input type="checkbox" id="inlineCheckbox1" value="col"> {{privateDic[common.lanType] && privateDic[common.lanType][col]? privateDic[common.lanType][col] : common.publicDic[common.lanType][col] || col}}
+						    </label>
+								<textarea *ngSwitchCase="'textarea'" class="form-control"></textarea>
+							</div>
+							<div *ngIf="!colsAttributes[col]">
+								<input type="text"/>
+							</div>
+					</div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" (click)="addProduct($event)">确定</button>
+        </div>
+        </form>
+    </div>
+</div>-->

@@ -1,0 +1,22 @@
+.btn-outline-primary {
+    color: #007bff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #007bff;
+    
+}
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.pagination > li > a {
+    color: #337ab7 !important;
+}
+
+.btn-sm{
+    padding: 6px 12px !important;
+    position: absolute;
+    left:120%;
+    top:28%;
+}

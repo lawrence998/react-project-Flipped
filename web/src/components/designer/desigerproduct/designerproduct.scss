@@ -1,0 +1,49 @@
+.topb{height:1.306667rem;background:#222;color:#fff;line-height:1.306667rem;font-size:0.48rem;text-align:center;
+    .icon-fanhui{color:#fff;font-size:0.4rem;text-indent:1em;padding-top:0.466667rem;}
+}
+.tiaowen{height:0.4rem;}
+.content{
+    width: 8.533333rem;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .feedcell{
+    float:left;
+    width: 320px;
+    height: 6.0rem;
+        .imageblock {
+            width: 4.0rem;
+            height: 4.0rem;
+            overflow: hidden;
+            vertical-align: bottom;
+            padding: 0.066667rem;
+
+            .imagestyle {
+                max-height: 4.0rem;
+                margin: 0 auto;
+                display: block;
+                vertical-align: bottom;
+            }
+        }
+        .priceblock {
+            width: 4.266667rem;
+            height: 0.533333rem;
+            text-align: center;
+            font-size:0.293333rem;
+        }
+         .commentblock {
+            width: 4.0rem;
+            height: 1.333333rem;
+            line-height: 0.426667rem;
+            color: #666;
+            font-size:0.293333rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding: 0 0.533333rem;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

@@ -1,0 +1,357 @@
+.my-address-lists, .state-show{
+    background: #f0f0f0;
+}
+
+.state-show .J_home {
+    overflow: hidden;
+}
+.my-address-lists {
+    margin: 0;
+    padding: 0;
+    .no-address {
+        display: block;
+        padding: 0 24px;
+        height: 100px;
+        border-bottom: 1px solid #e5e5e5;
+        background: #fff;
+        margin-bottom: 20px;
+        .address-tip {
+            padding-top: 34px;
+            overflow: hidden;
+            height: 75px;
+            i {
+                background-size: contain;
+                font-size:34px;
+                margin-right: 12px;
+                display: block;
+                float: left;
+            }
+            span {
+                float: left;
+                height: 25px;
+                line-height: 34px;
+                font-size: 28px;
+            }
+            i.new-address-btn {
+                font-size: 30px;
+                margin-top: 2px;
+                display: block;
+                float: right;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.product-lists-box {
+    padding: 0;
+    background: #fff;
+    margin-bottom: 10px;
+    .saler-info {
+        padding: 20px 24px 0;
+        height: 50px;
+        i {
+            background: url(../../../public/cart_img/w_share_user.png) no-repeat;
+            width: 34px;
+            height: 34px;
+            margin-right: 10px;
+            overflow: hidden;
+            display: block;
+            float: left;
+            background-size: contain;
+        }
+        a {
+            font-size: 28px;
+            line-height: 33px;
+            font-weight: 800;
+            float: left;
+        }
+    }
+    .product-items ul li.product-item {
+        border-bottom: 1px solid #e6e6e6;
+        .product-item-body {
+            position: relative;
+            background: #f5f5f5;
+            padding: 12px 24px;
+            margin-bottom: 5px;
+            min-height: 188px;
+            overflow: hidden;
+            width:100%;
+            .item-img {
+                position: absolute;
+                top: 12px;
+                left: 24px;
+                width: 184px;
+                height: 184px;
+                text-align: center;
+                a {
+                    display: table-cell;
+                    width: 183px;
+                    height: 183px;
+                    border: 1px solid #e6e6e6;
+                    text-align: center;
+                    overflow: hidden;
+                    vertical-align: middle;
+                    margin: 0 auto;
+                    img {
+                        max-width: 183px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .item-info {
+                margin-left: 210px;
+                overflow: hidden;
+                .product-name {
+                    line-height: 28px;
+                    a {
+                        display: inline;
+                        font-size: 26px;
+                        color: #000;
+                    }
+                }
+                .product-sku {
+                        padding-top: 15px;
+                        font-size: 24px;
+                        line-height: 28px;
+                        color: #ababab;
+                }
+                .product-price {
+                    display: block;
+                    padding-top: 10px;
+                    font-size: 30px;
+                    height: 46px;
+                    overflow: hidden;
+                    .price {
+                        float: left;
+                    }
+                    .num {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+.item-shop-youfei {
+    font-size: 28px;
+    .tips {
+        font-size: 24px;
+        text-align: right;
+        color: #ccc;
+        padding-right: 15px;
+    }
+}
+
+.item-amount, .item-shop-youfei {
+    height: 88px;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 88px;
+    margin: 0 24px;
+}
+
+.fl-l {
+    float: left;
+}
+
+.fl-r {
+    float: right;
+}
+
+.fl-l, .fl-r, .numEditor, .pro-right {
+    display: inline-block;
+}
+
+.message-box {
+    height: 88px;
+    width: 590px;
+    padding: 0 24px;
+    overflow: hidden;
+    div.message-input {
+        overflow: hidden;
+        input {
+            float: left;
+            display: block;
+            width: 600px;
+            height: 36px;
+            margin-top: 26px;
+            font-size: 28px;
+            line-height: 36px;
+            padding: 0;
+            overflow: hidden;
+        }
+    }
+    input {
+        border: none;
+        font-size: 30px;
+        height: 36px;
+        line-height: 32px;
+        padding: 0;
+        outline: 0;
+    }
+
+}
+
+.amount-total-price {
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+    margin: 0 24px;
+    font-size: 28px;
+    height: 90px;
+    line-height: 90px;
+    span.price {
+        color: #e70000;
+    }
+    span {
+        display: inline;
+        float: right;
+    }
+    span.product-num {
+        padding-right: 24px;
+    }
+}
+
+.coupon-check-box {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 24px;
+    background: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+    .coupon-title {
+        height: 95px;
+        line-height: 95px;
+        .text {
+            color: #bebebe;
+        }
+        .right-act {
+            font-size:0.293333rem;
+            margin-top: 36px;
+            display: block;
+            background-size: cover;
+        }
+        .coupon-num {
+            padding-right: 10px;
+        }
+    }
+}
+
+.pay-style-box {
+    background: #fff;
+    padding: 20px 24px 94px;
+    .cart-titles {
+        font-size: 28px;
+        padding-bottom: 20px;
+    }
+    .payment-method .pay-check-body li.payment-method-item:first-child {
+        padding-top: 0;
+    }
+    .payment-method .pay-check-body li.payment-method-item {
+        padding: 24px 0;
+        border-bottom: 1px solid #e5e5e5;
+        overflow: hidden;
+        .payment-method-item-img {
+            float: left;
+            width: 64px;
+            height: 64px;
+            overflow: hidden;
+            span {
+                display: table-cell;
+                width: 64px;
+                height: 64px;
+                text-align: center;
+                vertical-align: middle;
+                overflow: hidden;
+                img {
+                    vertical-align: middle;
+                    max-width: 64px;
+                }
+            }
+        }
+        .payment-method-item-info {
+            float: left;
+            padding-left: 15px;
+            position:relative;
+            .font-dark-bold {
+                font-size: 28px;
+                line-height: 26px;
+                font-weight: 800;
+            }
+            .font-light {
+                font-size: 26px;
+                padding-top: 10px;
+                line-height: 32px;
+            }
+        }
+        .check-status {
+            position:absolute;
+            right:-100%;
+            top:10%;
+            width: 36px;
+            height: 36px;
+            margin-top: 14px;
+            background: url(../../../public/cart_img/car-pro-check.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .checkbox{
+            right:-141%;
+        }
+        .check-status.checked {
+            background: url(../../../public/cart_img/car-pro-checked.png) no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.font-light, .font-light-bold {
+    color: #9a9a9a;
+}
+
+.cart-total {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 94px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+    overflow: hidden;
+    .sub-box {
+        position: relative;
+        z-index: 10;
+    }
+    .price-total {
+        float: left;
+        padding: 0 24px;
+        font-size: 30px;
+        line-height: 94px;
+        color:#000;
+        .js-totalFee {
+            font-size: 30px;
+            font-weight: 400;
+        }
+        .postage {
+            font-size: 24px;
+            b {
+                font-weight: 800;
+            }
+        }
+    }
+    .pay-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 220px;
+        height: 95px;
+        background: #2e2e2e;
+        color: #fff;
+        font-size: 30px;
+        line-height: 95px;
+        text-align: center;
+    }
+}

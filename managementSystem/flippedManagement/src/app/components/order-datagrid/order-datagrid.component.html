@@ -1,0 +1,75 @@
+<div *ngIf="dataset">
+    <div class="alert alert-success alert-dismissible" role="alert" [style.display] = "a_display">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>恭喜你！</strong> 删除成功
+    </div>
+    <div class="alert alert-success alert-dismissible" role="alert" [style.display] = "add_display">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>恭喜你！</strong> 增加订单成功
+    </div>
+    <div class="Mask" [style.display] = "m_display" [style.width.px] = "m_width" [style.height.px] = "m_height"></div>
+    <!-- <button type="button" class="btn btn-info">添加商品</button> -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-info add" (click)="add($event)">添加订单</button>
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">添加一个订单</a></li>
+            <li><a href="#">添加多个订单</a></li>
+            <li><a href="#">其他</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+    <button class="btn btn-danger" (click)="batchDelete($event)">批量删除</button>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th *ngIf="multiple"><input type="checkbox" [checked]="currentTrIndexs.length == dataset.length" (click)="selectAll()" /></th>
+                <ng-template ngFor let-key [ngForOf]="getKeys(dataset[0])">
+                    <th *ngIf="(!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0">{{privateDic[common.lanType] && privateDic[common.lanType][key] ? privateDic[common.lanType][key] : common.publicDic[common.lanType][key] || key}}</th>
+                </ng-template>
+                <th>编辑</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of dataset; let idx = index" [class.actived] = "currentTrIndexs && currentTrIndexs.indexOf(idx) > -1" (click)="selectTr(idx)" [id] = "idx" [class.hide] = "remove.indexOf(idx) > -1">
+                <td *ngIf="multiple"><input type="checkbox" [checked]="currentTrIndexs && currentTrIndexs.indexOf(idx) > -1"/></td>
+                <ng-template ngFor let-key [ngForOf]="getKeys(obj)">
+                    <td *ngIf="(!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0">{{filterData(key,obj[key])}}</td>
+                </ng-template>
+                <td><button class="btn btn-primary" (click)="edit(idx)">编辑</button><button class="btn btn-danger" (click)="removes($event)">删除</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="Popup" [style.display] = "p_display" [style.top.px] = "p_top" [style.left.px] = "p_left">
+        <h3 class="P_head" (click)="del($event)">
+            添加订单
+            <span class="P_del" >&times;</span>
+        </h3>
+        <!-- <ul class="main"> -->
+            <!-- <li *ngFor="let key of getKeys(dataset[0])"> -->
+                <!-- <p *ngIf="(!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0">{{privateDic[common.lanType] && privateDic[common.lanType][key] ? privateDic[common.lanType][key] : common.publicDic[common.lanType][key] || key}}</p> -->
+                <form class="form-horizontal">
+                    <div class="form-group" *ngFor="let key of getKeys(dataset[0]); let idx = index" >
+                        <label class="col-sm-2 control-label" *ngIf="(!columns[0] || columns.indexOf(key) > -1) && filterColumns.indexOf(key) < 0">{{privateDic[common.lanType] && privateDic[common.lanType][key] ? privateDic[common.lanType][key] : common.publicDic[common.lanType][key] || key}}</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control input" placeholder="请输入相应的数据"  ng-minlength="1" [id]="idx">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="conserve btn btn-success" (click)="addOrder($event)">保存</button>
+                    </div>
+                </form>
+                
+            <!-- </li> -->
+        <!-- </ul> -->
+    </div>
+    <div *ngIf="paginationConfig" (click)="goto($event)" class="btn-group fenye">
+        <!-- <input type="button" [value]="i" *ngFor="let i of [] | range:pageCount" class="btn btn-default" /> -->
+        <pagination-disabled [pageCount]="pageCount"></pagination-disabled>
+    </div>
+</div>
+

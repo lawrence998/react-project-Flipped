@@ -1,0 +1,107 @@
+.table tbody tr td {
+	text-align:center;
+	width:4% !important;
+	vertical-align: middle;
+	overflow: hidden;
+	border-color:#ccc;
+}
+
+.table tbody tr td:nth-child(1){
+	width:1% !important;
+}
+
+.table tbody tr td:nth-child(6){
+	width:5% !important;
+}
+
+.table tbody tr td:nth-child(5){
+	width:5% !important;
+}
+
+.table tbody tr td:nth-child(2){
+	width:2% !important;
+}
+
+.table tbody tr td:nth-child(3){
+	width:2% !important;
+}
+
+.table tbody tr td:nth-child(4){
+	width:1% !important;
+}
+
+.table thead tr{
+	border:1px solid #ccc;
+}
+.table thead tr th{
+	text-align:center;
+}
+
+.table-bordered tr th{
+	border-color:#ccc;
+	border-bottom:0 none;
+	background:#3c8dbc;
+	color:#fff;
+}
+
+.table input{
+	width:16px;
+	height:16px;
+}
+
+.form-control{
+	border-radius:3px;
+}
+
+.designerSearch{
+	width:100%;
+	height:60px;
+}
+
+.designerSearch>div{
+	display:inline-block;
+	vertical-align: middle;
+}
+
+.dropdown-menu > li > span {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+
+.dropdown-menu > li > span:hover{
+	background:#ccc;
+}
+
+.modal-body .input-group{
+	margin-top:6px;
+}
+
+.thname{
+	width:140px;
+}
+
+.textareaBox{
+	width:430px;
+	height:80px;
+}
+
+.changeData{
+	margin-left: 400px;
+	margin-bottom:20px;
+}
+.changeData1{
+	margin-bottom:20px;
+}
+
+.modal-content{
+	border-radius:10px !important;
+}
+
+.activeColor{
+	background:#58bc58;
+}

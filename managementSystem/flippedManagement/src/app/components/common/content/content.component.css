@@ -1,0 +1,35 @@
+.content-header > .breadcrumb {
+    float: right;
+    background: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 7px 5px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    border-radius: 2px;
+}
+.content-header > .breadcrumb{
+    right:0;
+    left:10px;
+    display: inline-block;
+}
+
+.header{
+    display:inline-block;
+    position:absolute;
+    right:20px;
+    top:20px;
+    z-index:2;
+}
+.header>h4{
+    position:absolute;
+    top:1px;
+    right:46px;
+    margin:0;
+    font-size: 14px;
+}
+.header select{
+    height: 18px;
+}

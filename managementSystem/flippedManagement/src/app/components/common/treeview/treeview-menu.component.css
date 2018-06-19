@@ -1,0 +1,55 @@
+.c-treeview-menu {
+  /*display: none;*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 15px;
+}
+.c-treeview-menu .c-treeview-menu {
+  padding-left: 15px;
+}
+.c-treeview-menu > li {
+  margin: 0;
+  margin-left: 2px;
+  border-left: 1px solid #5bc0de;
+  padding-left: 5px;
+}
+.c-treeview-menu > li > .c-treeview-menu {
+  margin: 0 1px;
+}
+.c-treeview-menu > li > a {
+  padding: 5px 5px 8px 15px;
+  display: block;
+  color: #eeeeee;
+  border: 0px;
+}
+.c-treeview-menu > li > a:hover {
+  color: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  cursor: pointer;
+  filter: alpha(opacity=35);
+  -moz-opacity: 0.35;
+  opacity: 0.35;
+  margin-left: 5px;
+}
+.c-treeview-menu > li > a > .fa {
+  width: 20px;
+}
+.c-treeview-menu li.active a {
+  color: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  cursor: pointer;
+  filter: alpha(opacity=35);
+  -moz-opacity: 0.35;
+  opacity: 0.35;
+  margin-left: 5px;
+}
+.c-treeview-menu li.active > .c-treeview-menu {
+  display: block;
+}

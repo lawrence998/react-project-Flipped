@@ -1,0 +1,36 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+
+       <!-- <h1>
+          {{pageTitle}}
+
+      <h1>
+          {{pageTitle}}
+
+          <small>{{pageDesc}}</small>
+      </h1> -->
+      <!-- <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+          <li class="active">Here</li>
+      </ol> -->
+      <div class="header">
+          <h4>language:</h4>
+          <select [(ngModel)]="common.lanType">
+              <option value="en">en</option>
+              <option value="cn">cn</option>
+          </select>
+      </div>
+    </section>
+
+    <!-- Main content 
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+		<router-outlet></router-outlet>
+
+    <!-- </section> -->
+    <!-- /.content -->
+  </div>

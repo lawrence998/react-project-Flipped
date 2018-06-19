@@ -1,0 +1,40 @@
+.navigation-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display:flex;
+    width: 100%;
+    height:1.333333rem;
+    border-top: 0.026666rem solid #ccc;
+    background:#fff;
+    z-index:100;
+    .nav-item {
+        position: relative;
+        display:flex;
+        flex:1;     
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        i { 
+            display:flex;
+            justify-content:center;
+            width: 100%;
+            height: 100%;
+            text-align:center;
+            font-size: 0.66rem;
+            margin-top: 0.066666rem;
+        }
+        span {
+            display:flex;
+            justify-content:center;
+            width: 100%;
+            height:100%;
+            font-size: 0.333333rem;
+            margin-top: 0.133333rem;
+        }
+    }
+    .active {
+        color : #d8a33e;
+    }
+    a:hover{color:#d8a33e;}
+}

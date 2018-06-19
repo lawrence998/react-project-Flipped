@@ -1,0 +1,91 @@
+#login{
+	width:100%;
+	height:100%;
+	overflow: hidden;
+}
+
+.headers{
+	display:none !important;
+}
+
+.input-group{
+	width:400px;
+	height:300px;
+	border-radius:20px;
+	border:1px solid #5bc0de;
+	position:fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+
+.form-control{
+	width:200px;
+}
+
+.input-group .login{
+	width:260px;
+	height:30px;
+	margin:0 auto;
+	margin-top:50px;
+}
+.input-group .loginPaw{
+	width:260px;
+	height:30px;
+	margin:0 auto;
+	margin-top:10px;
+}
+
+.input-group .login .loginInput{
+	margin-right:10px;
+	height:30px;
+}
+.input-group .loginPaw .registerInput{
+	margin-right:10px !important;
+	height:30px;
+}
+
+.input-group .login .username{
+	height:30px;
+	width:200px;
+	border-radius:5px;
+	border:0 none;
+	outline:none;
+	border:1px solid #666;
+	padding-left:12px;
+}
+
+.input-group .loginPaw .paw{
+	margin-right:10px !important;
+	height:30px;
+	width:200px;
+	border-radius:5px;
+	border:0 none;
+	outline:none;
+	border:1px solid #666;
+	padding-left:12px;
+}
+
+.input-group button{
+	display:block;
+	width:120px;
+	border-radius:5px;
+	margin-left:148px;
+	margin-top:30px;
+}
+
+.input-group>p{
+	width:100%;
+	text-align:center;
+	height:50px;
+	line-height:50px;
+	font-size:30px;
+}
+
+.modal-header{
+	height:200px;
+}
+
+.modal-title{
+	margin:50px 150px !important;
+}

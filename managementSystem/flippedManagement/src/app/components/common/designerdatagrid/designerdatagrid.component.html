@@ -1,0 +1,105 @@
+
+ <!-- 弹窗，修改信息 -->
+<ng-template #template>
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title pull-left">信息修改</h4>
+  </div>
+  <div class="modal-body designertext">
+	<div class="input-group" *ngFor = "let key of getKeys(showBoxObj)">
+	  	<div class="designerName" *ngIf="showBoxPrivate.indexOf(key) >-1">{{showBoxPrivate.indexOf(key) >-1 ? showBoxObj[key] : ""}}</div>
+	  <span class="input-group-addon thname" id="basic-addon1" *ngIf = "showBoxFilter.indexOf(key) == -1">{{dictionaryPrivate[common["lanType"]][key]}}</span>
+	  <textarea  class="form-control textareaBox" aria-describedby="basic-addon1" *ngIf = "showBoxFilter.indexOf(key) == -1"  [(ngModel)] = "showBoxObj[key]"></textarea>
+	</div>
+  </div>
+  <button type="button" class="btn btn-primary changeData"  aria-label="Close" (click)="modalRef.hide()">退出修改</button>
+  <button type="button" class="btn btn-danger changeData1" aria-label="Close" (click)="saveChange()">保存修改</button>
+</ng-template>
+
+
+
+
+
+
+<!-- 查询搜索框 -->
+<div class="designerSearch">
+	<div class="btn-group" *ngIf = "dataSet[0]">
+	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    {{setWord}} 
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu">
+	    <li *ngFor = "let key of getKeys(dataSet[0])">
+	    	<span *ngIf= "designerSelect.indexOf(key) >= 0" (click) = "selectWord(key)">{{dictionaryPrivate[common["lanType"]][key]}}</span>
+	    </li>
+	  </ul>
+	</div>
+
+
+	<div>
+		<form class="navbar-form navbar-left" role="search">
+		  <div class="form-group">
+		    <input type="text" class="form-control" placeholder="Search" name = "searchWd" [(ngModel)] = "searchWd">
+		  </div>
+		  <button type="submit" class="btn btn-default" (click) = "searchMsg()">查询</button>
+		  <button type="submit" class="btn btn-danger " style="margin-left:100px" (click) = "delMulti()">批量删除</button>
+		</form>
+	</div>
+</div>
+
+
+
+
+<!-- 表格 -->
+<table class="table table-hover table table-bordered" *ngIf = "dataSet">
+  <thead>
+    <tr *ngIf ="dataSet[0]">
+    	<th scope="col" (click) = "selectTrTotal()"><input type="checkbox" [checked] = "delMultiDesigner.length == dataSet.length"/></th>
+    	<ng-template ngFor let-key [ngForOf]="getKeys(dataSet[0])">
+			<th scope="col" *ngIf ="(!dataSetConfigs[0] || dataSetConfigs.indexOf(key) > -1) && dataSetFilter.indexOf(key) < 0"  >
+			{{dictionaryPrivate[common["lanType"]][key]}}
+			</th>
+		</ng-template>
+		<th scope="col">设置</th>
+    </tr>
+  </thead>
+  <tbody *ngIf ="dataSet">
+    <tr *ngFor="let obj of dataSet" [class.activeColor] ="delMultiDesigner.indexOf(obj.designer_id) >= 0" (click)="getDelObjectId(obj)">
+        <td scope="col"><input type="checkbox" [checked] ="delMultiDesigner.indexOf(obj.designer_id) >= 0"></td>
+      	<ng-template ngFor let-key [ngForOf]="getKeys(obj)">
+			<td scope="col" *ngIf ="(!dataSetConfigs[0] || dataSetConfigs.indexOf(key) > -1) && dataSetFilter.indexOf(key) < 0">
+			{{obj[key]}}
+			</td>
+		</ng-template>
+		<td scope="col">
+			<button type="button" class="btn btn-primary"  (click)="showBox(obj)" (click)="openModal(template)">修改</button>
+			<button type="button" class="btn btn-danger" (click) = "delDesigner(obj)">删除</button>
+		</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<!-- 分页 -->
+<div class="fenye">
+<nav aria-label="..." *ngIf = "pageNum">
+    <div class="pagination">
+    	<li (click) = "prevOrNEXT(currlentNum,'prev')">
+    		<span>&laquo;</span>
+    	</li>
+    </div>
+	  <div class="pagination" *ngFor = "let num of getPageArray(pageNum)">
+	    <li [class.active]="num == currlentNum" (click) = "getNumber(num)">
+	    	<span>{{num}}</span>
+	    </li>
+	  </div>
+    <div class="pagination">
+    	<li (click) = "prevOrNEXT(currlentNum,'next')">
+    		<span>&raquo;</span>
+    	</li>
+    </div>
+</nav>
+</div>

@@ -1,0 +1,54 @@
+{
+	"cols":"product_title,price,brand,datatime",
+	"colsAttributes":{
+		"price": {
+			"type":"select",
+			"data":[{"value":0,"text":"0-99"},{"value":1,"text":"100-199"},{"value":2,"text":"200-299"},{"value":3,"text":"300-399"},{"value":4,"text":"400-499"},{"value":5,"text":"500-599"},{"value":6,"text":"600-699"},{"value":7,"text":"700-799"},{"value":8,"text":"800-899"},{"value":9,"text":"900-999"},{"value":10,"text":"1000+"}],
+			"defaultValue":"0"
+		},
+		"postage": {
+			"type":"select-api",
+			"api":"productpostage",
+			"match":{"value":"postage","text":"postage"},
+			"defaultValue":"1"
+		},
+		"brand": {
+			"type":"select-api",
+			"api":"productbrand",
+			"match":{"value":"brand","text":"brand"},
+			"defaultValue":"1"
+		},
+		"type":{
+			"type":"select",
+			"data":[{"value":1,"text":"男人"},{"value":0,"text":"女人"},{"value":2,"text":"生活家居"},{"value":3,"text":"箱包"},{"value":4,"text":"礼物"},{"value":5,"text":"配饰"},{"value":6,"text":"配件"},{"value":7,"text":"美食"}],
+			"defaultValue":"0"
+		},
+		"product_type": {
+			"type":"select-api",
+			"api":"producttype",
+			"match":{"value":"type","text":"product_type"},
+			"defaultValue":"1"
+		},
+		"datatime": {
+			"type":"input",
+			"minitype":"date",
+			"two":true
+		},
+		"popurlar": {
+			"type":"input",
+			"minitype":"checkbox"
+		},
+		"return_goods": {
+			"type":"input",
+			"minitype":"checkbox"
+		},
+		"discount": {
+			"type":"input",
+			"minitype":"checkbox"
+		},
+		"delivery": {
+			"type":"input",
+			"minitype":"checkbox"
+		}
+	}
+}

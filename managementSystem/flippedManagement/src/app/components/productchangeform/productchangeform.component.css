@@ -1,0 +1,14 @@
+.product-msg{
+	position: absolute;
+	top: 50%;
+	left: 30%;
+}
+.product-img{
+	width: 80px;
+	height: 80px;
+}
+.product-img img{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+}

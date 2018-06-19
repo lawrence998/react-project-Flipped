@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <!-- Main Header -->
+  <app-header [class]="hideCOM"></app-header>
+
+  <!-- Left side column. contains the logo and sidebar -->
+  <app-menu [class]="hideCOM"></app-menu>
+
+  <!-- Content Wrapper. Contains page content -->
+  <app-content [class]="hideCOM"></app-content>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <app-footer [class]="hideCOM"></app-footer>
+
+  <!-- Control Sidebar -->
+  <app-sidebar [class]="hideCOM"></app-sidebar>
+  <!-- /.control-sidebar -->
+  
+  <app-login [class]="hideLogin" (parentAttr)="parentEvent($event)"></app-login>
+  <app-register [class]="hideRegister"></app-register>
+  
+</div>

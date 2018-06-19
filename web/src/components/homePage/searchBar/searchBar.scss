@@ -1,0 +1,80 @@
+
+.SearchBar{
+	height:1.4rem;
+	background:#9B9B8C;
+	display:flex;
+	flex-direction:row;
+	.goBlack{
+		position:relative;
+		flex:0.35;
+		.goBlack_icon{
+			font-size:0.68rem;
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+		}
+	}
+	.searchIn{
+		flex:3.5;
+		position:relative;
+		>span{
+			display:block;
+			height:0.8rem;
+			width:93%;
+			border-radius:0.4rem;
+			overflow:hidden;
+			background:#fff;
+			position:absolute;
+			left:0;
+			top:50%;
+			transform:translateY(-50%);
+			.search_icon{
+				display:inline-block;
+				vertical-align:middle;
+				width:0.8rem;
+				font-size:0.63rem;
+				font-weight:800;
+				color:rgba(0, 0, 0, 0.65);
+				margin-top:0.066667rem;
+			}	
+			input{
+				vertical-align:middle;
+				height:0.773333rem;
+				display:inline-block;
+				border:0 none;
+				font-size:0.36rem;
+				width:77%;
+			} 
+		}
+
+	}
+	.searchLogin{
+		flex:0.5;
+		position:relative;
+		.sealogin{
+			.login_icon{
+				font-size:0.7rem;
+				position:absolute;
+				left:50%;
+				top:50%;
+				transform:translate(-50%,-50%);
+			}
+			button{
+				width:1.3rem;
+				height:0.6rem;
+				padding-bottom:0.066667rem;
+				font-size:0.42rem;
+				text-align:left;
+				border:0 none;
+				outline:none;
+				background:#9B9B8C;
+				color:#333;
+				position:absolute;
+				left:50%;
+				top:50%;
+				transform:translate(-50%,-50%);
+			}
+		}
+	}
+}

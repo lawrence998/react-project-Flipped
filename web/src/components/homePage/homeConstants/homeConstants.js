@@ -1,0 +1,3 @@
+export const REQUESTINGS= 'REQUESTINGS';
+export const REQUEST_ENDS = 'REQUEST_ENDS';
+export const REQUEST_ERRORS = 'REQUEST_ERRORS';
